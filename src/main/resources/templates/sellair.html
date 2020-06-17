@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+    <head>
+		<meta charset="utf-8">
+		<title>Sell Aircraft</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/sellform.css">
+		<style>
+			.text-wrapper{
+				width: 35%;
+				float: left;
+				padding-left: 15px;
+				text-align: justify;
+
+			}
+			#formaAir {
+
+				display: flow-root;
+			}
+
+			#formaFile{
+				position: relative;
+				left: 18%;
+				width:480px;
+			}
+
+			.banner{
+				width: 95%;
+				margin-top: 150px;
+			}
+		</style>
+    </head>
+<br>
+    <body>
+	<div class="background-wrap">
+		<div class="background" >
+		</div>
+	</div>
+
+	<div class="text-wrapper">
+		<h4>
+			As a recognised and respected company for aircraft sales in the world, we offer expert advice and guidance for any individual or business looking to buy an aircraft. We can help you decide which type of aircraft best suits your needs.
+		</h4>
+		<h5>
+			If you are looking to buy a helicopter or aeroplane, or have an aircraft you wish to sell, or perhaps would like to trade in an aircraft, our team would be pleased to provide a proposal for you.
+		</h5>
+		<p>
+			Click the graphic on the right to view the aircraft currently for sale through Multiflight.
+		</p>
+		<p>
+			We buy and sell a wide range of fixed wing aircraft, including Beechcraft, Beechjet, Bombardier, Caravan, Cessna 150, Cessna 172, Cessna 182, Cessna 208, Cessna 310, Cessna 401, Cessna 406, Cessna 421, Cessna 208 Grand Caravan, Cessna 425, Challenger, Citation, Conquest, Falcon 2000, Falcon 900, Falcon 7X, Gulfstream II, Gulfstream III, Gulfstream V, Gulfstream G550, Hawker 700, Hawker 800, Hawker 800XP, Hawker 900, Hawker 1000, Kingair 90, Kingair 200, Kingair 350, Lear 31, Lear 35, Lear 40, Lear 45, Pilatus PL 12, Piper Meridian and Socata TBM.
+		</p>
+		<p>
+			Here at Multiflight we buy and sell a wide range of helicopters, including the Agusta 109, Agusta Bell 206, Eurocopter 350, Eurocopter 355, Eurocopter 365, EC 120, EC 135, EC 155, MD Helicopters 500 & 900, Sikorsky S76, Bell 206, Bell 429, Robinson R22 and R44.
+		</p>
+		<p>
+			Whichever fixed wing aircraft or helicopter you have interest in buying or selling, or trading in, please contact us and speak to our expert sales team to see how this could work for you.
+		</p>
+		<p>
+			<img class="banner" src="img/banner.jpg" alt="banner">
+		</p>
+	</div>
+	<!--/*@thymesVar id="newplane" type=""*/-->
+	<form id="formaAir" th:action="@{/api/aircraft}" th:object="${newplane}" method="post">
+
+		<h1>Sell Aircraft</h1>
+
+		<fieldset>
+			<legend><span class="number">1</span>Aircraft general info</legend>
+			<label for="name">Make/Model:</label>
+			<input type="text" id="name" name="name">
+
+			<label for="manufacture">Year of manufacture:</label>
+			<input type="tel" id="manufacture" name="manufacture">
+
+			<label>Condition:</label>
+			<input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">New</label><br>
+			<input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="light">Used</label>
+			<div class="space" style="padding-bottom: 25px">
+			</div>
+			<label for="location">Location:</label>
+			<input type="text" id="location" name="location">
+
+			<label for="sn">Serial number:</label>
+			<input type="tel" id="sn" name="sn">
+
+			<label for="ttaf">TTAF:</label>
+			<input type="tel" id="ttaf" name="ttaf">
+
+		</fieldset>
+
+		<fieldset>
+			<legend><span class="number">2</span>Description</legend>
+			<label for="descr">Short description:</label>
+			<textarea id="descr" name="descr"></textarea>
+		</fieldset>
+		<fieldset>
+
+			<label for="reg">Registration:</label>
+			<input type="text" id="reg" name="reg">
+
+			<label for="price">Price $:</label>
+			<input type="text" id="price" name="price">
+
+
+			<label for="job">Some Options:</label>
+			<select id="job" name="user_job">
+				<optgroup label="Business">
+					<option value="business_owner">Business Owner</option>
+					<option value="freelancer">Freelancer</option>
+				</optgroup>
+				<optgroup label="Other">
+					<option value="secretary">Secretary</option>
+					<option value="maintenance">Maintenance</option>
+				</optgroup>
+			</select>
+
+			<label>Some options:</label>
+			<input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Option 1</label><br>
+			<input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Option 2</label><br>
+			<input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Option 3</label>
+
+		</fieldset>
+		<button id="knopka" type="submit">Submit</button>
+	</form>
+
+
+	<form id="formaFile" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+		<fieldset>
+		<legend><span class="number">3</span>Pictures</legend>
+		<input type="file" name="files" multiple>
+		<input id="send" type="submit" value="Upload Files"/>
+		</fieldset>
+	</form>
+
+	<footer class="footer">
+		<div class="footer__addr">
+			<h1 class="footer__logo">AVIATRADE</h1>
+
+			<h2>Contact</h2>
+
+			<address>
+				5534 Somewhere In. The World 22193-10212<br>
+
+				<a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+			</address>
+		</div>
+
+		<ul class="footer__nav">
+			<li class="nav__item">
+				<h2 class="nav__title">Media</h2>
+
+				<ul class="nav__ul">
+					<li>
+						<a href="#">Online</a>
+					</li>
+
+					<li>
+						<a href="#">Print</a>
+					</li>
+
+					<li>
+						<a href="#">Alternative Ads</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="nav__item nav__item--extra">
+				<h2 class="nav__title">Technology</h2>
+
+				<ul class="nav__ul nav__ul--extra">
+					<li>
+						<a href="#">Hardware Design</a>
+					</li>
+
+					<li>
+						<a href="#">Software Design</a>
+					</li>
+
+					<li>
+						<a href="#">Digital Signage</a>
+					</li>
+
+					<li>
+						<a href="#">Automation</a>
+					</li>
+
+					<li>
+						<a href="#">Artificial Intelligence</a>
+					</li>
+
+					<li>
+						<a href="#">IoT</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="nav__item">
+				<h2 class="nav__title">Legal</h2>
+
+				<ul class="nav__ul">
+					<li>
+						<a href="#">Privacy Policy</a>
+					</li>
+
+					<li>
+						<a href="#">Terms of Use</a>
+					</li>
+
+					<li>
+						<a href="#">Sitemap</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<div class="legal">
+			<p>&copy; 2020 Something. All rights reserved.</p>
+
+			<div class="legal__links">
+				<span>Made with <span class="heart">♥</span> Ilja Veselov </span>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		$("#formaFile").submit(function(e) {
+			e.preventDefault();
+			var formData = new FormData(this);
+
+			$.ajax({
+				url: $(this).attr('action'),
+				type: 'POST',
+				data: formData,
+				success: function() {
+					alert("File(s) successfully loaded !")
+				},
+				cache: false,
+				contentType: false,
+				processData: false
+			});
+		});
+
+		$("#formaAir").submit(function(e) {
+			e.preventDefault();
+			var formData = new FormData(this);
+
+			$.ajax({
+				url: $(this).attr('action'),
+				type: 'POST',
+				data: formData,
+				success: function() {
+					alert("Data successfully loaded! Go to Step 3")
+				},
+				cache: false,
+				contentType: false,
+				processData: false
+			});
+		});
+
+	</script>
+
+    </body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/navbar.css">
+
+
+	<style>
+		.slogan{
+			display: inline-block;
+		}
+		.lower-slogan{
+			color: #EE0000;
+			position: absolute;
+			top: 105%;
+			text-decoration: underline;
+
+		}
+		.lower-slogan:hover{
+			color: #4CAF50;
+		}
+
+		.image{
+			display: inline-block;
+			position: relative;
+			top: 15px;
+		}
+
+		.with-img-top{
+			background-image: url("/img/preview16.jpg");
+			background-size: cover;
+			height: 150px;
+		}
+		.with-img-low{
+			background-image: url("/img/low-image1.jpg");
+			background-size: cover;
+			height: 480px;
+		}
+
+	</style>
+</head>
+
+<body>
+
+<div class="header-fixed">
+	<div class="navbar container">
+		<div class="logo"><img class="image" src="/img/Capture.JPG" alt="logo" style="height: 60px;width: 70px" >
+			<h2 class="slogan"><a href="/"> AVIATRADE</a></h2>
+		</div>
+		<input type="checkbox" id="navbar-toggle" >
+		<label for="navbar-toggle"><i></i></label>
+		<nav class="menu">
+
+			<ul class="main-menu" id="navigation">
+
+				<li> <a href="/home" class="links">Home</a></li>
+				<li> <a href="/buyair" class="links">Buy aircraft</a></li>
+				<li> <a href="/sellair" class="links">Sell aircraft</a></li>
+				<li><a href="#contacts">Chat Room</a></li>
+				<li><button class="myButton" onclick="location.href='/logout'"  >Logout</button> </li>
+
+			</ul>
+
+		</nav>
+	</div>
+</div>
+
+<div class="page-content" id="content">
+	<div class="with-img-top" id="with-img"></div>
+	<div class="black-border"></div>
+
+	<div class="clear"></div>
+
+	<div class="light-blue-bg">
+		<div class="we-know-left">
+			<img src="/img/white-arrow.png" alt="Search our inventory for sale"/>
+		</div>
+		<div class="we-know-right">
+			<h1>WE KNOW AIRCRAFT</h1>
+			<a href="#" id="black-border-button">SEARCH OUR INVENTORY</a>
+		</div>
+	</div>
+
+	<div class="with-img-low">
+	<div class="welcome">
+		<div class="lower-slogan">
+			<h1> CALL US TODAY!</h1>
+			<h2>+1-809-225-7523-1</h2>
+		</div>
+		<div class="welcome-1">
+			<p>Like all aircraft enthusiasts, you have a pretty good idea of what you want to move into next. But it's always a good idea to consult with the experts before making any major investment. Everyone at Aviatrade is there as a consultant, to help you fine tune your thinking about your flying needs as well as capital outlay and a realistic operating budget.</p>
+			<p>As well, they fly the aircraft that they sell. That experience, along with a large collection of printed aircraft comparisons and flight tests, makes up the storehouse of advice and research available to clients. Aviatrade wants to make sure you wind up flying the right aircraft. They'll steer you away from the ones with hidden maintenance challenges you may not be willing to deal with.</p>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+
+	<div class="black-border"></div>
+</div>
+	<footer class="footer">
+		<div class="footer__addr">
+			<h1 class="footer__logo">AVIATRADE</h1>
+
+			<h2>Contact</h2>
+
+			<address>
+				5534 Somewhere In. The World 22193-10212<br>
+
+				<a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+			</address>
+		</div>
+
+		<ul class="footer__nav">
+			<li class="nav__item">
+				<h2 class="nav__title">Media</h2>
+
+				<ul class="nav__ul">
+					<li>
+						<a href="#">Online</a>
+					</li>
+
+					<li>
+						<a href="#">Print</a>
+					</li>
+
+					<li>
+						<a href="#">Alternative Ads</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="nav__item nav__item--extra">
+				<h2 class="nav__title">Technology</h2>
+
+				<ul class="nav__ul nav__ul--extra">
+					<li>
+						<a href="#">Hardware Design</a>
+					</li>
+
+					<li>
+						<a href="#">Software Design</a>
+					</li>
+
+					<li>
+						<a href="#">Digital Signage</a>
+					</li>
+
+					<li>
+						<a href="#">Automation</a>
+					</li>
+
+					<li>
+						<a href="#">Artificial Intelligence</a>
+					</li>
+
+					<li>
+						<a href="#">IoT</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="nav__item">
+				<h2 class="nav__title">Legal</h2>
+
+				<ul class="nav__ul">
+					<li>
+						<a href="#">Privacy Policy</a>
+					</li>
+
+					<li>
+						<a href="#">Terms of Use</a>
+					</li>
+
+					<li>
+						<a href="#">Sitemap</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<div class="legal">
+			<p>&copy; 2020 Something. All rights reserved.</p>
+
+			<div class="legal__links">
+				<span>Made with <span class="heart">♥</span> Ilja Veselov </span>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script>
+	$(function() {
+		$("#navigation a").click(function(e) {
+			e.preventDefault(); //so the browser doesn't follow the link
+
+			$("#content").load(this.href, function() {
+				//execute here after load completed
+			});
+		});
+	});
+</script>
+
+
+</body>
+

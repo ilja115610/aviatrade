@@ -1,0 +1,81 @@
+#home {
+    background-image: url("/img/pic_home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 75% center;
+    min-height: 340px;
+    display: -ms-flexbox; /* IE10 */
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    border-bottom: 3px solid #1a1414;
+}
+#srch {
+    max-width: 1096px;
+    padding: 0 24px;
+    width: 100%;
+    margin: auto;
+}
+#srch h1 {
+    color: #fff;
+    font-size: 162.5%;
+    margin-bottom: .5em;
+}
+#srchbdr {
+    max-width: 476px;
+    width: 100%;
+    display: -ms-flexbox; /* IE10 */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+#srchbdr #GpsSearchQueryBox {
+    max-width: 750px;
+    width: 100%;
+    padding: 8px 0 7px 8px;
+    border-radius: 8px 0px 0px 8px;
+    -moz-border-radius: 8px 0px 0px 8px;
+    -webkit-border-radius: 8px 0px 0px 8px;
+    font-size: 100%;
+    color: #989898;
+    font-family: proxima-nova, sans-serif;
+    border: 1px solid #989898 !important;
+    border-right: 0 !important;
+}
+#srchbdr button {
+    display: -ms-flexbox; /* IE10 */
+    display: -webkit-flex;
+    display: flex;
+    background: #f3f5f2 !important;
+    border: 2px;
+    color: #e50000;
+    border-radius: 0px 8px 8px 0px;
+    -moz-border-radius: 0px 8px 8px 0px;
+    -webkit-border-radius: 0px 8px 8px 0px;
+    border: 1px solid #989898;
+    border-left: 0 !important;
+    padding: 8px 8px 4px;
+    cursor: pointer;
+    font-size: 125%;
+    width: auto;
+    height: auto;
+}
+
+.bt_hmsrch{
+    color: #e50000;
+    border-radius: 0px 8px 8px 0px;
+    -moz-border-radius: 0px 8px 8px 0px;
+    -webkit-border-radius: 0px 8px 8px 0px;
+    border: 1px solid #c21e1e;
+    border-left: 0 !important;
+    padding: 8px 8px 4px;
+    cursor: pointer;
+    font-size: 90%;
+    width: auto;
+    height: auto;
+
+}
+
