@@ -22,7 +22,7 @@
 log/
 target/
 **/src/test/**
-.mvn
+.mvn/
 
 ### VS Code ###
 .vscode/
