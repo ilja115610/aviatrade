@@ -6,30 +6,7 @@
 		<title>Sell Aircraft</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/css/sellform.css">
-		<style>
-			.text-wrapper{
-				width: 35%;
-				float: left;
-				padding-left: 15px;
-				text-align: justify;
 
-			}
-			#formaAir {
-
-				display: flow-root;
-			}
-
-			#formaFile{
-				position: relative;
-				left: 18%;
-				width:480px;
-			}
-
-			.banner{
-				width: 95%;
-				margin-top: 150px;
-			}
-		</style>
     </head>
 <br>
     <body>
@@ -224,42 +201,7 @@
 		</div>
 	</footer>
 
-	<script>
-		$("#formaFile").submit(function(e) {
-			e.preventDefault();
-			var formData = new FormData(this);
-
-			$.ajax({
-				url: $(this).attr('action'),
-				type: 'POST',
-				data: formData,
-				success: function() {
-					alert("File(s) successfully loaded !")
-				},
-				cache: false,
-				contentType: false,
-				processData: false
-			});
-		});
-
-		$("#formaAir").submit(function(e) {
-			e.preventDefault();
-			var formData = new FormData(this);
-
-			$.ajax({
-				url: $(this).attr('action'),
-				type: 'POST',
-				data: formData,
-				success: function() {
-					alert("Data successfully loaded! Go to Step 3")
-				},
-				cache: false,
-				contentType: false,
-				processData: false
-			});
-		});
-
-	</script>
+<script src="/js/sellair.js"></script>
 
     </body>
 

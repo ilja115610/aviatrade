@@ -438,3 +438,24 @@ label:hover ~ input[type=password] {
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
+
+.error{
+    color: #EE0000;
+}
+.alert{
+    color: #EE0000;
+
+}
+.success{
+    color: #4CAF50;
+    bottom: 2%;
+    right: 29%;
+    position: absolute;
+}
+
+.invalidInput1{
+    color:red;
+}
+.invalidInput2{
+    color: red;
+}

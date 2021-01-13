@@ -25,7 +25,7 @@ public class User {
     @Column
     private String email;
 
-//    @OneToMany()
+//    @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER)
 //    private List<Aircraft> list = new ArrayList<>();
 
     public User() {
@@ -39,13 +39,7 @@ public class User {
         this.email = email;
     }
 
-//    public List<Aircraft> getList() {
-//        return list;
-//    }
-//
-//    public void setList(List<Aircraft> list) {
-//        this.list = list;
-//    }
+
 
     public long getUsr_id() {
         return usr_id;
@@ -94,6 +88,14 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+//    public List<Aircraft> getList() {
+//        return list;
+//    }
+//
+//    public void setList(List<Aircraft> list) {
+//        this.list = list;
+//    }
 
     @Override
     public String toString() {

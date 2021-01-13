@@ -268,4 +268,27 @@ label.light {
             flex: 2 0px;
         }
     }
+
+    .text-wrapper{
+        width: 35%;
+        float: left;
+        padding-left: 15px;
+        text-align: justify;
+
+    }
+    #formaAir {
+
+        display: flow-root;
+    }
+
+    #formaFile{
+        position: relative;
+        left: 18%;
+        width:480px;
+    }
+
+    .banner{
+        width: 95%;
+        margin-top: 150px;
+    }
 }
